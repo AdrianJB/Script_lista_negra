@@ -25,7 +25,7 @@ if accion == '-a':
 		
 elif accion == '-d':
 	if tipo == '-url':
-		url = open('/etc/squid3/no_url.acl', 'r')
+		url = open('/etc/squid3/urls.acl', 'r')
 		fichero_url = url.readlines()
 		url.close()
 	  for linea in fichero_url:
