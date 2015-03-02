@@ -15,11 +15,13 @@ if accion == '-a':
     if tipo == '-url':
     	url = open('/etc/squid3/urls.acl', 'a')
     	url.write(nombre)
-	url.close() 
+	url.close()
+	print "Añadida correctamente"
     elif tipo == '-dom':
     	dom = open('/etc/squid3/dominios.acl' ,'a')
 	dom.write(nombre)
 	dom.close()
+	print "Añadido correctamente"
     else:
 	print 'Introduce un tipo valido'
 		
