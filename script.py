@@ -21,7 +21,7 @@ if accion == '-a':
 		dom.write(nombre)
 		dom.close()
 	else:
-		print 'Introduce una accion valida'
+		print 'Introduce un tipo valido'
 		
 elif accion == '-d':
 	if tipo == '-url':
