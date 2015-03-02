@@ -33,7 +33,6 @@ elif accion == '-d':
         for linea in fichero_url:
 	   if linea == nombre:
 	       fichero_url.remove(nombre)
-	       # Guardamos la lista con la url solicitada eliminada		
 	       url = open('/etc/squid3/urls.acl', 'w')
 	       for linea in fichero_url:
 	           url.write(linea)
@@ -46,7 +45,6 @@ elif accion == '-d':
 	for linea in fichero_dom:
 	    if linea == nombre:
 	        fichero_dom.remove(nombre)
-		# Guardamos la lista con la url solicitada eliminada		
 		dominio = open('/etc/squid3/dominios.acl', 'w')
 		for linea in fichero_dom:
 		    dominio.write(linea)
