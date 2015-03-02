@@ -28,30 +28,29 @@ elif accion == '-d':
 	url = open('/etc/squid3/urls.acl', 'r')
 	fichero_url = url.readlines()
 	url.close()
-    for linea in fichero_url:
-	if linea == nombre:
-	    fichero_url.remove(nombre)
-	    # Guardamos la lista con la url solicitada eliminada		
-	    url = open('/etc/squid3/urls.acl', 'w')
-	    for linea in fichero_url:
-		url.write(linea)
-		url.close()
-		print 'Eliminada correctamente'
-	elif tipo == '-dom':
-		dominio = open('/etc/squid3/dominios.acl', 'r')
-		fichero_dom = dominio.readlines()
-		dominio.close()
-		for linea in fichero_dom:
-			if linea == nombre:
-			    fichero_dom.remove(nombre)
+        for linea in fichero_url:
+	   if linea == nombre:
+	       fichero_url.remove(nombre)
+	       # Guardamos la lista con la url solicitada eliminada		
+	       url = open('/etc/squid3/urls.acl', 'w')
+	       for linea in fichero_url:
+	           url.write(linea)
+	           url.close()
+		   print 'Eliminada correctamente'
+    elif tipo == '-dom':
+	dominio = open('/etc/squid3/dominios.acl', 'r')
+	fichero_dom = dominio.readlines()
+	dominio.close()
+	for linea in fichero_dom:
+	    if linea == nombre:
+	        fichero_dom.remove(nombre)
 		# Guardamos la lista con la url solicitada eliminada		
-			    dominio = open('/etc/squid3/dominios.acl', 'w')
-			    for linea in fichero_dom:
-				dominio.write(linea)
-				dominio.close()
-
-			    print 'Eliminado correctamente'
-	else:
-		print 'Introduce un tipo valido'
+		dominio = open('/etc/squid3/dominios.acl', 'w')
+		for linea in fichero_dom:
+		    dominio.write(linea)
+		    dominio.close()
+		    print 'Eliminado correctamente'
+    else:
+	print 'Introduce un tipo valido'
 else:
     print 'Introduce una accion valida'
